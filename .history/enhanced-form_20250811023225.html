@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Form</title>
+</head>
+<body>
+
+    <header>
+        <h1>Welcome to My Web Page</h1>
+        <p>This page has examples of lists, tables, media, and a complete HTML5 form.</p>
+    </header>
+
+    <main>
+
+        <!-- Lists -->
+        <section>
+            <h2>My Top 3 Favorite Activities</h2>
+            <ul>
+                <li>Reading novels</li>
+                <li>Exploring nature</li>
+                <li>Cooking new recipes</li>
+            </ul>
+        </section>
+
+        <!-- Table -->
+        <section>
+            <h2>Sample Weekly Plan</h2>
+            <table border="1">
+                <tr>
+                    <th>Day</th>
+                    <th>Activity</th>
+                </tr>
+                <tr>
+                    <td>Monday</td>
+                    <td>Work on projects</td>
+                </tr>
+                <tr>
+                    <td>Wednesday</td>
+                    <td>Go hiking</td>
+                </tr>
+                <tr>
+                    <td>Friday</td>
+                    <td>Family time</td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- Media -->
+        <section>
+            <h2>Media Examples</h2>
+            <figure>
+                <img src="https://via.placeholder.com/400x200" alt="Nature Image">
+                <figcaption>Beautiful nature scenery</figcaption>
+            </figure>
+
+            <p>Relax with this short audio clip:</p>
+            <audio controls>
+                <source src="sample-audio.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+
+            <p>Watch this short video:</p>
+            <video controls width="400">
+                <source src="sample-video.mp4" type="video/mp4">
+                Your browser does not support the video element.
+            </video>
+        </section>
+
+        <!-- Form -->
+        <section>
+            <h2>Contact Form</h2>
+            <form action="#" method="post">
+
+                <fieldset>
+                    <legend>Personal Details</legend>
+
+                    <label for="fullname">Full Name:</label>
+                    <input type="text" id="fullname" name="fullname" placeholder="John Doe" required><br><br>
+
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" placeholder="example@email.com" autocomplete="email" required><br><br>
+
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required><br><br>
+
+                    <label for="userid">User ID:</label>
+                    <input type="text" id="userid" name="userid" value="USER-001" readonly><br><br>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Preferences</legend>
+
+                    <label for="dob">Date of Birth:</label>
+                    <input type="date" id="dob" name="dob" required><br><br>
+
+                    <label>Gender:</label><br>
+                    <input type="radio" id="male" name="gender" value="male" required>
+                    <label for="male">Male</label><br>
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">Female</label><br><br>
+
+                    <label for="country">Country:</label>
+                    <select id="country" name="country" required>
+                        <option value="">--Select--</option>
+                        <option value="usa">United States</option>
+                        <option value="uk">United Kingdom</option>
+                        <option value="aus">Australia</option>
+                    </select><br><br>
+
+                    <label for="favcolor">Favorite Color:</label>
+                    <input type="color" id="favcolor" name="favcolor"><br><br>
+
+                    <label for="bio">Short Bio:</label><br>
+                    <textarea id="bio" name="bio" rows="4" cols="30" placeholder="Tell us about yourself..."></textarea><br><br>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Login Information</legend>
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" placeholder="Enter password" minlength="6" required><br><br>
+
+                    <label for="website">Website:</label>
+                    <input type="url" id="website" name="website" placeholder="https://example.com"><br><br>
+                </fieldset>
+
+                <input type="submit" value="Submit">
+                <input type="reset" value="Reset">
+            </form>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 My Simple Web Page</p>
+    </footer>
+
+</body>
+</html>

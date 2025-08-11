@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Enhanced Form with Car Video</title>
+</head>
+<body>
+
+  <header>
+    <h1>Fun Page with Cars, Media & Form</h1>
+    <p>This page shows how lists, tables, media, and an HTML5 form work together.</p>
+  </header>
+
+  <main>
+    <!-- List Example -->
+    <section>
+      <h2>My Favorite Car Types</h2>
+      <ul>
+        <li>Sports cars</li>
+        <li>Electric cars</li>
+        <li>SUVs</li>
+      </ul>
+    </section>
+
+    <!-- Table Example -->
+    <section>
+      <h2>Car Comparison</h2>
+      <table border="1">
+        <tr>
+          <th>Model</th><th>Type</th><th>Seats</th>
+        </tr>
+        <tr>
+          <td>Tesla Model S</td><td>Electric Sedan</td><td>5</td>
+        </tr>
+        <tr>
+          <td>Ford Mustang</td><td>Sports Coupe</td><td>4</td>
+        </tr>
+      </table>
+    </section>
+
+    <!-- Media Section: Image, Audio, Car Video -->
+    <section>
+      <h2>Media Showcase</h2>
+      <figure>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Blue_McLaren_P1.jpg/640px-Blue_McLaren_P1.jpg"
+             alt="Blue McLaren P1" width="400">
+        <figcaption>Blue McLaren P1 (Public domain image)</figcaption>
+      </figure>
+
+      <h3>Listen to an Engine Sound</h3>
+      <audio controls>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+
+      <h3>Watch Cars on the Road</h3>
+      <video controls width="400">
+        <source src="https://pixabay.com/videos/download/video-56310_small.mp4" type="video/mp4">
+        Your browser does not support the video element.
+      </video>
+      <p><small>This video shows highway traffic—free from Pixabay.com :contentReference[oaicite:0]{index=0}</small></p>
+    </section>
+
+    <!-- HTML5 Form -->
+    <section>
+      <h2>Contact Form</h2>
+      <form action="#" method="post" autocomplete="on">
+        <fieldset>
+          <legend>Personal Info</legend>
+          <label for="name">Full Name:</label><br>
+          <input type="text" id="name" name="name" placeholder="Jane Doe" required><br><br>
+
+          <label for="email">Email:</label><br>
+          <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" required><br><br>
+
+          <label for="phone">Phone (xxx-xxx-xxxx):</label><br>
+          <input type="tel" id="phone" name="phone" placeholder="123-456-7890"
+                 pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required><br><br>
+        </fieldset>
+
+        <fieldset>
+          <legend>Preferences</legend>
+          <label for="color">Favorite Color:</label><br>
+          <input type="color" id="color" name="color"><br><br>
+
+          <label for="dob">Date of Birth:</label><br>
+          <input type="date" id="dob" name="dob" required><br><br>
+
+          <label>Subscribe:</label><br>
+          <input type="radio" id="yes" name="subscribe" value="yes" required>
+          <label for="yes">Yes</label>
+          <input type="radio" id="no" name="subscribe" value="no">
+          <label for="no">No</label><br><br>
+        </fieldset>
+
+        <fieldset>
+          <legend>Secure Login</legend>
+          <label for="password">Password (min 6 chars):</label><br>
+          <input type="password" id="password" name="password" minlength="6" required><br><br>
+        </fieldset>
+
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Demo Page</p>
+  </footer>
+
+</body>
+</html>

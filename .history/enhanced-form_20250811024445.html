@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Enhanced Form — Demo</title>
+  <style>
+    :root{font-family:system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;line-height:1.4;color:#222}
+    body{max-width:900px;margin:28px auto;padding:20px;background:#fbfbfc}
+    header,main,footer{display:block}
+    header{padding:12px 0;border-bottom:1px solid #e6e6e9}
+    h1{margin:0 0 6px;font-size:1.6rem}
+    p.lead{margin:0;color:#555}
+    .grid{display:grid;grid-template-columns:1fr 320px;gap:20px;margin-top:18px}
+    .card{background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(20,20,40,0.04)}
+    nav ul{padding-left:1rem}
+    table{width:100%;border-collapse:collapse;margin-top:8px}
+    th,td{padding:8px 10px;border:1px solid #eee;text-align:left}
+    figure{margin:0}
+    .form-row{display:flex;gap:10px}
+    label{font-size:.92rem;margin-bottom:6px;display:block}
+    input[type=text],input[type=email],input[type=tel],input[type=url],input[type=password],textarea,select,input[type=number],input[type=date],input[type=time]{width:100%;padding:10px;border-radius:8px;border:1px solid #ddd}
+    textarea{min-height:100px}
+    fieldset{border:1px solid #e8e8ed;padding:12px;border-radius:8px;margin-bottom:12px}
+    legend{font-weight:600;padding:0 8px}
+    .small{font-size:.9rem;color:#666}
+    .actions{text-align:right;margin-top:12px}
+    button{background:#5b21b6;color:#fff;padding:10px 16px;border-radius:8px;border:0;cursor:pointer}
+    .muted{color:#777;font-size:.9rem}
+    @media (max-width:880px){.grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Enhanced Form Demo</h1>
+    <p class="lead">A simple multi-section page demonstrating lists, tables, media, and a fully accessible HTML5 form with native validation.</p>
+  </header>
+
+  <main class="grid">
+    <section class="card">
+      <h2>About this page</h2>
+      <p class="small">This page shows structured content using semantic HTML5 elements and a detailed form that uses built-in validation attributes (required, pattern, minlength, type, readonly, autocomplete).</p>
+
+      <h3>Quick features</h3>
+      <ul>
+        <li>Semantic layout with <code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;footer&gt;</code>.</li>
+        <li>Examples of lists, tables and media (image, audio, video).</li>
+        <li>Accessible form using <code>&lt;label&gt;</code>, <code>&lt;fieldset&gt;</code>, and ARIA where helpful.</li>
+      </ul>
+
+      <h3>Use cases (ordered list)</h3>
+      <ol>
+        <li>Student practice for HTML and forms</li>
+        <li>Teaching accessibility and native validation</li>
+        <li>Prototype for simple data collection</li>
+      </ol>
+
+      <h3>Reference: feature table</h3>
+      <table>
+        <thead>
+          <tr><th>Element</th><th>Purpose</th><th>Example</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Lists</td><td>Organize items</td><td>Steps, features</td></tr>
+          <tr><td>Media</td><td>Embed images/audio/video</td><td>Product demo</td></tr>
+          <tr><td>Form</td><td>Collect input</td><td>Registration, survey</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Media examples</h3>
+      <figure>
+        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=bd8e9c8f7a7a5c2f4d2f8f5c3b9c2d6c" alt="A scenic road" style="width:100%;height:auto;border-radius:8px;object-fit:cover;margin-bottom:6px">
+        <figcaption class="muted">Figure: Scenic road — useful for a car or travel themed UI.</figcaption>
+      </figure>
+
+      <p class="small">Short audio & video demos (muted by default) — accessible controls included.</p>
+
+      <figure style="margin-top:10px">
+        <figcaption class="muted">Sample audio: supportive background loop</figcaption>
+        <audio controls preload="none">
+          <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+      </figure>
+
+      <figure style="margin-top:12px">
+        <figcaption class="muted">Sample video: muted preview</figcaption>
+        <video controls width="100%" preload="metadata" style="border-radius:8px">
+          <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </figure>
+
+    </section>
+
+    <aside class="card" aria-labelledby="form-heading">
+      <h2 id="form-heading">Registration & Request Form</h2>
+      <p class="muted">Complete the form to request a demo or register. All validation uses native HTML5 attributes — no JavaScript required.</p>
+
+      <form action="#" method="post" novalidate>
+        <!-- Readonly reference -->
+        <label for="ref">Reference number</label>
+        <input id="ref" name="reference" type="text" value="ENH-2025-001" readonly aria-readonly="true">
+        <p class="small">This reference is readonly and assigned automatically.</p>
+
+        <fieldset>
+          <legend>Personal details</legend>
+
+          <label for="fullname">Full name</label>
+          <input id="fullname" name="fullname" type="text" placeholder="Your full name" minlength="3" required autocomplete="name">
+
+          <div class="form-row">
+            <div style="flex:1">
+              <label for="email">Email address</label>
+              <input id="email" name="email" type="email" placeholder="name@example.com" required autocomplete="email" aria-describedby="email-help">
+              <div id="email-help" class="small">We'll only use this to contact you about this request.</div>
+            </div>
+            <div style="width:140px">
+              <label for="phone">Phone</label>
+              <input id="phone" name="phone" type="tel" placeholder="+2547XXXXXXXX" pattern="\+?\d{9,15}" required autocomplete="tel">
+            </div>
+          </div>
+
+          <label for="username">Username</label>
+          <input id="username" name="username" type="text" minlength="3" maxlength="20" pattern="[A-Za-z0-9_\-]{3,20}" placeholder="letters, numbers, _ or -" required autocomplete="username">
+
+        </fieldset>
+
+        <fieldset>
+          <legend>Account & security</legend>
+
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" minlength="8" pattern="(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}" placeholder="At least 8 chars, include a number" required autocomplete="new-password">
+          <small class="small">Must include letters and numbers.</small>
+
+          <label for="website">Website (optional)</label>
+          <input id="website" name="website" type="url" placeholder="https://your-site.example" autocomplete="url">
+
+        </fieldset>
+
+        <fieldset>
+          <legend>Request details</legend>
+
+          <label for="service">Which service are you interested in?</label>
+          <select id="service" name="service" required autocomplete="organization">
+            <option value="">Choose a service</option>
+            <option value="demo">Product demo</option>
+            <option value="training">Training session</option>
+            <option value="consult">Consultation</option>
+          </select>
+
+          <label for="date">Preferred date</label>
+          <input id="date" name="date" type="date" min="2025-08-10" required>
+
+          <label for="time">Preferred time</label>
+          <input id="time" name="time" type="time" required>
+
+          <label for="participants">Number of participants</label>
+          <input id="participants" name="participants" type="number" min="1" max="50" value="1" required>
+
+          <label for="notes">Short notes</label>
+          <textarea id="notes" name="notes" maxlength="500" placeholder="Tell us any special requirements (optional)" aria-describedby="notes-help"></textarea>
+          <div id="notes-help" class="small">Max 500 characters.</div>
+
+        </fieldset>
+
+        <fieldset>
+          <legend>Payment & confirmation</legend>
+
+          <label for="amount">Amount (KES)</label>
+          <input id="amount" name="amount" type="number" min="0" step="1" value="0" required>
+
+          <label for="card">Card number</label>
+          <input id="card" name="card" type="text" inputmode="numeric" pattern="\d{13,19}" placeholder="1234123412341234" autocomplete="cc-number" required>
+
+          <div class="form-row">
+            <div style="flex:1">
+              <label for="expiry">Expiry (MM/YY)</label>
+              <input id="expiry" name="expiry" type="text" pattern="(0[1-9]|1[0-2])\/(\d{2})" placeholder="MM/YY" required autocomplete="cc-exp">
+            </div>
+            <div style="width:120px">
+              <label for="cvc">CVC</label>
+              <input id="cvc" name="cvc" type="text" inputmode="numeric" pattern="\d{3,4}" maxlength="4" placeholder="123" required autocomplete="cc-csc">
+            </div>
+          </div>
+
+        </fieldset>
+
+        <fieldset>
+          <legend>Agree & submit</legend>
+
+          <div>
+            <input id="terms" name="terms" type="checkbox" required>
+            <label for="terms">I confirm the details are correct and accept the terms.</label>
+          </div>
+
+          <div style="margin-top:10px">
+            <label>Preferred contact method</label>
+            <div>
+              <input id="contact-email" name="contact" type="radio" value="email" checked>
+              <label for="contact-email">Email</label>
+            </div>
+            <div>
+              <input id="contact-phone" name="contact" type="radio" value="phone">
+              <label for="contact-phone">Phone / WhatsApp</label>
+            </div>
+          </div>
+
+        </fieldset>
+
+        <div class="actions">
+          <button type="submit">Submit request</button>
+        </div>
+
+      </form>
+
+      <p class="small" style="margin-top:10px">Notes: This demo uses only native HTML5 validation attributes like <code>required</code>, <code>pattern</code>, <code>minlength</code>, and <code>type</code>. No JavaScript validation is included.</p>
+
+    </aside>
+  </main>
+
+  <footer style="max-width:900px;margin:20px auto;padding:12px;text-align:center;color:#666">
+    <p class="small">Created for practice — Enhanced Form & HTML5 validation demo. &middot; Use responsibly.</p>
+  </footer>
+</body>
+</html>
